@@ -1,0 +1,28 @@
+// show databases
+use ("Marcela")
+// db.people.insertOne
+// ({
+//     name:"Marcela",
+//     lastname: "Robert",
+//     salary: 1
+// })
+
+// db.people.insertMany([
+//     {
+//         name: "Bruna",
+//         lastname:"Bonk",
+//         salary:10
+//     },
+//     {
+//         name: "Ketlyn",
+//         lastname:"Jomes",
+//         salary: 10
+//     }
+// ])
+
+let pessoa ={
+    name: "Lays",
+    lastname:"Arceles",
+    salary: 10
+}
+db.people.insertOne({pessoa})
