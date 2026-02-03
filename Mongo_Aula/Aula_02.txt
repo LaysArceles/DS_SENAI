@@ -12,3 +12,9 @@ db.people.insertMany([
   { name: "Mateus", lastname: "Costa", salary: 1900 },
   { name: "Camila", lastname: "Rocha", salary: 2750 }
 ])
+
+
+db.people.find({name: "Ana"}) procurar string nome
+
+
+db.people.find({name: /s/}) procurar letra

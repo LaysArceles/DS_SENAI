@@ -1,5 +1,5 @@
 // show databases
-use ("Marcela")
+use ("Empressa")
 // db.people.insertOne
 // ({
 //     name:"Marcela",
@@ -24,5 +24,6 @@ let pessoa ={
     name: "Lays",
     lastname:"Arceles",
     salary: 10
+    salary: 10s
 }
 db.people.insertOne({pessoa})
