@@ -49,8 +49,11 @@ use ("Empressa")
 db.people.find()
 
 use ("Empressa")
-db.people.updateMany(
-    {},
-    {$set:{salary: 20}}
+db.people.deleteMany(
+    {name:/F/}
 );
 
+use ("Empressa")
+db.people.deleteOne({
+    _id: ObjectId("6981f61d7225def328ea37ae")
+});
