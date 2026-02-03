@@ -53,3 +53,4 @@ db.people.updateMany(
     {},
     {$set:{salary: 20}}
 );
+
