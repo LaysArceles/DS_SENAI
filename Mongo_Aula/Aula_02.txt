@@ -1,0 +1,14 @@
+use ("Empressa")
+
+db.people.insertMany([
+  { name: "Carlos", lastname: "Ferreira", salary: 2500 },
+  { name: "Ana", lastname: "Silva", salary: 3200 },
+  { name: "Ricardo", lastname: "Oliveira", salary: 1500 },
+  { name: "Fernanda", lastname: "Santos", salary: 4100 },
+  { name: "Diego", lastname: "Souza", salary: 2800 },
+  { name: "Beatriz", lastname: "Lima", salary: 3300 },
+  { name: "Gustavo", lastname: "Pereira", salary: 2100 },
+  { name: "Juliana", lastname: "Almeida", salary: 5000 },
+  { name: "Mateus", lastname: "Costa", salary: 1900 },
+  { name: "Camila", lastname: "Rocha", salary: 2750 }
+])
