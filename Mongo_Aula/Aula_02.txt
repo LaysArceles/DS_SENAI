@@ -44,3 +44,12 @@ db.people.updateOne(
     {_id:ObjectId("6981f61d7225def328ea37ac")},
     {$unset: {nome: ""}}
 );
+
+use ("Empressa")
+db.people.find()
+
+use ("Empressa")
+db.people.updateMany(
+    {},
+    {$set:{salary: 20}}
+);
