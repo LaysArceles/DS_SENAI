@@ -36,5 +36,11 @@ db.people.find({salary: {$gte:1900}},{name: 1 , lastname: 1})
 
 db.people.updateOne(
     {_id:ObjectId("6981f61d7225def328ea37ac")}
-    {$set:{nome: "Anna"}}
+    {$set:{name: "Anna"}}
+);
+
+apaga a coluna
+db.people.updateOne(
+    {_id:ObjectId("6981f61d7225def328ea37ac")},
+    {$unset: {nome: ""}}
 );
