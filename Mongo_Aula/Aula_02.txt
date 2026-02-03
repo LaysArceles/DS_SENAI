@@ -21,3 +21,5 @@ db.people.find({name: /^s/}) começa com letra
 db.people.find({name: /s$/}) termina com a letra
 db.people.find({name: /[^s][n$]/}) procurar letra
 db.people.find({name: /^G .* o$/}) procura começa e termina com a letra
+db.people.find({$and:[{name:"Ana"},{lastname:"Silva"}]}) procura nome e sobrenome
+db.people.find({salary:{$gt:2000}}) 
