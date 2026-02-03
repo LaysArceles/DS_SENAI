@@ -23,3 +23,11 @@ db.people.find({name: /[^s][n$]/}) procurar letra
 db.people.find({name: /^G .* o$/}) procura começa e termina com a letra
 db.people.find({$and:[{name:"Ana"},{lastname:"Silva"}]}) procura nome e sobrenome
 db.people.find({salary:{$gt:2000}}) 
+
+// $eq - igual a
+// $gte - maior ou igual a 
+// $in - corresponde a qualquer um dos valores especificados em uma matriz
+// $lt - menor que
+// $lte - menor ou igual a 
+// $ne - valores diferentes do especificado
+// $nin - nenhum dos valores especificados em uma matriz
