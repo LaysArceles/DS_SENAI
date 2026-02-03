@@ -16,5 +16,6 @@ db.people.insertMany([
 
 db.people.find({name: "Ana"}) procurar string nome
 
-
 db.people.find({name: /s/}) procurar letra
+db.people.find({name: /^s/}) começa com letra
+db.people.find({name: /s$/}) termina com a letra
