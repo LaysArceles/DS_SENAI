@@ -31,3 +31,10 @@ db.people.find({salary:{$gt:2000}})
 // $lte - menor ou igual a 
 // $ne - valores diferentes do especificado
 // $nin - nenhum dos valores especificados em uma matriz
+
+db.people.find({salary: {$gte:1900}},{name: 1 , lastname: 1})
+
+db.people.updateOne(
+    {_id:ObjectId("6981f61d7225def328ea37ac")}
+    {$set:{nome: "Anna"}}
+);
