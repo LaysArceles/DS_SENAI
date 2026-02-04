@@ -3,3 +3,5 @@ npm init -y //pula as etapas de input do init.
 
 “type”: “module”;
 npm i typescript @types/node tsx -D
+
+npx tsc --init
