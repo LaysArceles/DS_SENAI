@@ -5,3 +5,8 @@ npm init -y //pula as etapas de input do init.
 npm i typescript @types/node tsx -D
 
 npx tsc --init
+
+node -v
+https://github.com/tsconfig/bases?tab=readme-ov-file
+
+Node 22	@tsconfig/node22
