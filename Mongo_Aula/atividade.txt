@@ -56,3 +56,16 @@ db.people.find({email: /gmail.com$/})
 //busca 4
 use("Atividade")
 db.people.find({cidade: "São Paulo"})
+
+//busca 5
+use("Atividade")
+db.people.find({dataCadastro: {$gte: ISODate("2023-01-01")}})
+
+//update 1
+use("Atividade")
+db.people.updateOne(
+  {_id:ObjectId("698328cc80387908fa4b3746")},
+  {$set:{nome: "Bianca", email: "bianca.souza@gmail.com"}}
+)
+use("Atividade")
+db.people.find()
