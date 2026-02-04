@@ -28,3 +28,4 @@ The tsconfig.json:
     "moduleResolution": "node16"
   }
 }
+gitignore 
