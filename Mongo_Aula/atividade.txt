@@ -69,3 +69,19 @@ db.people.updateOne(
 )
 use("Atividade")
 db.people.find()
+
+//upDate 2
+use("Atividade")
+db.people.updateOne(
+  {nome: "Bruno Costa"},
+  {$set:{cidade:"Santos"}}
+)
+
+//update 3
+use("Atividade")
+db.people.updateMany(
+  {telefone: "41"},
+  {$set: {cidade: "Curitiba"}}
+)
+//Deletar 1
+
