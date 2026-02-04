@@ -29,3 +29,5 @@ The tsconfig.json:
   }
 }
 gitignore 
+
+node_modules/
