@@ -10,3 +10,21 @@ node -v
 https://github.com/tsconfig/bases?tab=readme-ov-file
 
 Node 22	@tsconfig/node22
+
+The tsconfig.json:
+
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "_version": "22.0.0",
+
+  "compilerOptions": {
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
+    "module": "nodenext",
+    "target": "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16"
+  }
+}
