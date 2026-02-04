@@ -1,0 +1,2 @@
+npm init //cria o arquivo package.json que gerencia os pacotes e dependências
+npm init -y //pula as etapas de input do init.
