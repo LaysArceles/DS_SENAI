@@ -48,4 +48,11 @@ db.people.find({nome: /^A/i})
 //busca 2
 use("Atividade")
 db.people.find({telefone: /^9/})
+
 // busca 3
+use("Atividade")
+db.people.find({email: /gmail.com$/})
+
+//busca 4
+use("Atividade")
+db.people.find({cidade: "São Paulo"})
