@@ -1,5 +1,4 @@
 import express from 'express'
-import person from ''
 
 const port = 8080;
 const app = express();
