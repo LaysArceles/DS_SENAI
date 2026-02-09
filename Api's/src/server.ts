@@ -1,7 +1,14 @@
 import express from 'express'
+import router from './routes/routes.ts';
 
 const port = 8080;
 const app = express();
+
+app.get('/', (req,res )=> {
+    res.status(200).send({response: "Api Ok!"})
+})
+
+router(app)
 
 // const people = {
 //     name: "Lays",
