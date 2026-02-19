@@ -22,6 +22,11 @@ router
      .get('/filtro', (req:Request, res: Response) =>{
          const {name ,lastname} = req.query
          res.status(200).send({response: name, lastname })
+     })
+     .put('/Atualizar/:id' ,(req:Request, rep:Response)=>{
+         const {id} = req.params
+         const {name, lastname} = req.body
+         rep.status(200).send ({ response:`atualizando o usuário ${id} -> ${name} ${lastname}`})
 
      })
 // //{
