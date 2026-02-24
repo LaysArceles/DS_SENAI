@@ -58,7 +58,9 @@ router
         let idzao = Number(id)
         const exists = user.find((i) => i.id == idzao)
         const existemail = user.find((e) => e.email == email)
-        if (existemail) {
+        const emailConfirmar = exists?.email
+
+        if (existemail || emailConfirmar != email) {
             return res.status(400).send({ response: "Email já existe no servidor" })
         }
         if (!exists) {
