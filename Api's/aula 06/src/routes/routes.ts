@@ -6,5 +6,5 @@ import person from './person.ts';
 export default function (app: Express) {
     app
         .use(express.json())
-        .use('/api/person', person)
+        .use('/dta', person)
 }

@@ -1,39 +1,58 @@
 import express, { Request, response, Response, Router } from 'express';
+import Person from '../models/Person.ts';
 
 const router: Router = express.Router();
-const people: object[] = [];
 
 router
-     .post('/add', (req:Request,res:Response) => {
-        const{name,lastname, age, image}= req.body
-        // console.log (name,lastname, age, image)
-        people.push({name,lastname, age, image})
-        res.status(200).send({message:'Usario cadastrado com sucesso!'})
-     })
-     .get ('/usuario',(req:Request,res:Response) => {
-        res.status(200).send({users:people})
-     })
-     .get('/usuario/:id',(req:Request, res: Response) =>{
-         const {id} = req.params
-         let convertID = Number(id)
-         res.status(200).send({response: people[convertID] })
-     })
+    .post('/add', async(req: Request, res: Response) => {
+        const {name, lastname,age } = req.body
+        const person = new Person({name,lastname,age})
+        await person.save()
+        res.status(200).send({ response: `Bem vindo ${name}` })
+    })
 
-     .get('/filtro', (req:Request, res: Response) =>{
-         const {name ,lastname} = req.query
-         res.status(200).send({response: name, lastname })
-     })
-     .put('/Atualizar/:id' ,(req:Request, rep:Response)=>{
-         const {id} = req.params
-         const {name, lastname} = req.body
-         rep.status(200).send ({ response:`atualizando o usuário ${id} -> ${name} ${lastname}`})
+    .get('/access', async(req: Request, res: Response) => {
+        const people = await Person.find({name:"Lays"})
+        res.status(200).send({response:people})
+    })
+    .get('/access/:id', async(req: Request, res: Response) => {
+        const { id } = req.params
+        const idzao = Number(id)
+        
+        return res.status(500).send({ response: "Usuário não encontrado" })
+        
+    })
+    .get('/filter', (req: Request, res: Response) => {
+        const { tipo } = req.query
+        res.status(200).send({ })
+    })
+    .put('/update/:id', (req: Request, res: Response) => {
+        const { name, email, tipo, ativo } = req.body
+        const { id } = req.params
+        let idzao = Number(id)
+        res.status(500).send({})
+    })
+    .patch('/updateName/:id', (req: Request, res: Response) => {
+        const { name } = req.body
+        const { id } = req.params
+        let idzao = Number(id)
+        res.status(200).send({ response: `Dados do usuario ${name} está atualizado` })
 
-     })
-// //{
-//     "name": "Lays",
-//     "lastname": "Arceles",
-//     "age": 20,
-//     "image": "https://static0.cbrimages.com/wordpress/wp-content/uploads/2024/05/maomao-looking-intrigued-with-cat-ears-in-the-apothecary-diaries-1.jpg?q=70&fit=crop&w=1232&h=693&dpr=1"
-// }
+    })
+    .patch('/updateAtivo/:id', (req: Request, res: Response) => {
+        const { ativo } = req.body
+        const { id } = req.params
+        let idzao = Number(id)
+       
+        res.status(200).send({ response: `Dados do usuario está atualizado` })
+
+    })
+    .delete('/delete/:id', (req: Request, res: Response) => {
+        const { id } = req.params
+        let idzao = Number(id)
+
+    })
+    
+
 
 export default router;
