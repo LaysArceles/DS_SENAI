@@ -16,21 +16,20 @@ router
         res.status(200).send({response:people})
     })
     .get('/access/:id', async(req: Request, res: Response) => {
-        const { id } = req.params
-        const idzao = Number(id)
-        
-        return res.status(500).send({ response: "Usuário não encontrado" })
-        
+        const people = await Person.findById
+        return res.status(500).send({response:people })
     })
-    .get('/filter', (req: Request, res: Response) => {
-        const { tipo } = req.query
-        res.status(200).send({ })
-    })
+    
     .put('/update/:id', (req: Request, res: Response) => {
         const { name, email, tipo, ativo } = req.body
         const { id } = req.params
         let idzao = Number(id)
         res.status(500).send({})
+    })
+    
+    .get('/filter', (req: Request, res: Response) => {
+        const { tipo } = req.query
+        res.status(200).send({ })
     })
     .patch('/updateName/:id', (req: Request, res: Response) => {
         const { name } = req.body
