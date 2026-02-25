@@ -1,0 +1,124 @@
+
+
+
+--------------------- aula 03 --------------------------
+//cria o arquivo package.json que gerencia os pacotes e dependências
+npm init 
+npm init -y 
+//pula as etapas de input do init.
+
+“type”: “module”;
+npm i typescript @types/node tsx -D
+
+npx tsc --init
+
+node -v
+https://github.com/tsconfig/bases?tab=readme-ov-file
+
+Node 22	@tsconfig/node22
+
+The tsconfig.json:
+
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "_version": "22.0.0",
+
+  "compilerOptions": {
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
+    "module": "nodenext",
+    "target": "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16"
+  }
+}
+gitignore 
+
+node_modules/
+
+npm i express @types/express
+
+Material Icon Theme
+
+---------------- Aula 06 -------------------
+comando para conectar ao Mango bd o banco 
+
+npm i mongoose config
+npm i --save-dev @types/config
+-----------------------------------------------
+criar pasta config 
+criar arquivo default.json 
+e colocar no arquivo:
+{
+    "db": "mongodb://localhost:27017"
+}
+pegar esse link no app mongo db
+-----------------------------------------------
+criar pasta database 
+criar arquivo databese.ts 
+e colocar no arquivo:
+
+import mongoose from 'mongoose';
+import config from 'config'
+
+const connectDB = async () => {
+try {
+const db: string = config.get('db');
+await mongoose.connect(db);
+console.log('MongoDB Connected');
+} catch (error) {
+console.error('MongoDB Connection Failed', error);
+process.exit(1);
+}
+};
+
+export default connectDB;
+---------------------------------------------------
+na pasta src 
+arquivo server
+colocar:
+
+import express from 'express'
+import router from './routes/routes.ts';
+import connectDB from '../database/database.ts'; // adicionado 
+
+const port = 8080;
+const app = express();
+
+app.get('/', (req,res )=> {
+    res.status(200).send({response: "Api Ok!"})
+})
+connectDB() // adicionado 
+router(app)
+
+app.listen(port,() => {
+    console.log(`Servidor rodando na porta ${port}`)
+})
+----------------------------------------------------
+na pasta src
+criar pasta models
+criar arquivo Person.ts
+e colocar no arquivo:
+import mongoose, { Schema, Document } from 'mongoose';
+
+interface IPerson extends Document {
+name: string;
+latsname: string;
+age: number;
+}
+
+const personSchema: Schema = new Schema({
+name: { type: String, required: true },
+lastname: { type: String, required: true },
+age: { type: Number, required: true },
+});
+
+
+const Person = mongoose.model<IPerson>('Person', personSchema);
+
+export default Person;
+-------------------------------------------------------------
+
+
