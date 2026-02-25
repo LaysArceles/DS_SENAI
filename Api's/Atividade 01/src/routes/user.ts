@@ -1,4 +1,5 @@
 import express, { Request, response, Response, Router } from 'express';
+import { error } from 'node:console';
 
 interface User {
     id: number;
@@ -39,12 +40,18 @@ router
     })
     .get('/access/:id', (req: Request, res: Response) => {
         const { id } = req.params
-        let idzao = Number(id)
-        const Existid = user.find((i) => i.id == idzao)
-        if (!Existid) {
-            return res.status(404).send({ response: "Usuario não Existe" })
+        const idzao = Number(id)
+        try {
+            const Existid = user.find((i) => i.id == idzao)
+            console.log(Existid)
+            if (!Existid) {
+                return res.status(404).send({ response: "Usuario não Existe" })
+            }
+            return res.status(200).send({ response: Existid })
         }
-        res.status(200).send({ response: user[idzao] })
+        catch (e) {
+            return res.status(500).send({ response: "Usuário não encontrado" })
+        }
 
     })
     .get('/filter', (req: Request, res: Response) => {
@@ -56,49 +63,70 @@ router
         const { name, email, tipo, ativo } = req.body
         const { id } = req.params
         let idzao = Number(id)
-        const exists = user.find((i) => i.id == idzao)
-        const existemail = user.find((e) => e.email == email)
+        try {
+            const exists = user.find((i) => i.id == idzao)
 
-        if (existemail) {
-            return res.status(400).send({ response: "Email já existe no servidor" })
+            const existemail = user.find((e) => e.email == email)
+
+            if (existemail) {
+                return res.status(400).send({ response: "Email já existe no servidor" })
+            }
+            if (!exists) {
+                return res.status(400).send({ response: "Este usuário não existe no servidor" })
+            }
+            const createDate = exists.date
+
+            exists.name = name
+            exists.email = email
+            exists.ativo = ativo
+            exists.tipo = tipo
+            exists.date = createDate
+
+            res.status(200).send({ response: `Dados do usuario ${name} está atualizado` })
         }
-        if (!exists) {
-            return res.status(400).send({ response: "Este usuário não existe no servidor" })
+        catch (e) {
+            res.status(500).send({ response: e })
         }
-        const createDate = exists.date
 
-        exists.name = name
-        exists.email = email
-        exists.ativo = ativo
-        exists.tipo = tipo
-        exists.date = createDate
 
-        res.status(200).send({ response: `Dados do usuario ${name} está atualizado` })
 
     })
-    .patch('updatePatch/:id', (req: Request, res: Response) => {
-        const { name, email, tipo, ativo } = req.body
+    .patch('/updateName/:id', (req: Request, res: Response) => {
+        const { name } = req.body
         const { id } = req.params
         let idzao = Number(id)
         const exists = user.find((i) => i.id == idzao)
-        const existemail = user.find((e) => e.email == email)
-
-        if (existemail && exists != id  ) {
-            return res.status(400).send({ response: "Email já existe no servidor" })
-        }
         if (!exists) {
             return res.status(400).send({ response: "Este usuário não existe no servidor" })
         }
-        const createDate = exists.date
-
         exists.name = name
-        exists.email = email
-        exists.ativo = ativo
-        exists.tipo = tipo
-        exists.date = createDate
+        res.status(200).send({ response: `Dados do usuario ${name} está atualizado` })
 
-        res.status(200).send({ response: `Dados do usuario ${name} está atualizado` }
-            
+    })
+    .patch('/updateAtivo/:id', (req: Request, res: Response) => {
+        const { ativo } = req.body
+        const { id } = req.params
+        let idzao = Number(id)
+        const exists = user.find((i) => i.id == idzao)
+        if (!exists) {
+            return res.status(400).send({ response: "Este usuário não existe no servidor" })
+        }
+        exists.ativo = ativo
+        res.status(200).send({ response: `Dados do usuario ${exists.name} está atualizado` })
+
+    })
+    .delete('/delete/:id', (req: Request, res: Response) => {
+        const { id } = req.params
+        let idzao = Number(id)
+        const exists = user.find((i) => i.id == idzao)
+        if (!exists) {
+            return res.status(400).send({ response: "Este usuário não existe no servidor" })
+        }
+
+        const index = user.indexOf(exists)
+        delete user[index]
+        res.status(200).send({ response: "Usuario deletado" })
+
     })
 
 
