@@ -8,9 +8,8 @@ const app = express();
 app.get('/', (req,res )=> {
     res.status(200).send({response: "Api Ok!"})
 })
-
+connectDB()
 router(app)
-
 
 app.listen(port,() => {
     console.log(`Servidor rodando na porta ${port}`)
