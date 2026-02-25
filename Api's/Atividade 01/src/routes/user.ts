@@ -58,15 +58,13 @@ router
         let idzao = Number(id)
         const exists = user.find((i) => i.id == idzao)
         const existemail = user.find((e) => e.email == email)
-        const emailConfirmar = exists?.email
 
-        if (existemail || emailConfirmar != email) {
+        if (existemail) {
             return res.status(400).send({ response: "Email já existe no servidor" })
         }
         if (!exists) {
             return res.status(400).send({ response: "Este usuário não existe no servidor" })
         }
-
         const createDate = exists.date
 
         exists.name = name
@@ -77,6 +75,30 @@ router
 
         res.status(200).send({ response: `Dados do usuario ${name} está atualizado` })
 
+    })
+    .patch('updatePatch/:id', (req: Request, res: Response) => {
+        const { name, email, tipo, ativo } = req.body
+        const { id } = req.params
+        let idzao = Number(id)
+        const exists = user.find((i) => i.id == idzao)
+        const existemail = user.find((e) => e.email == email)
+
+        if (existemail && exists != id  ) {
+            return res.status(400).send({ response: "Email já existe no servidor" })
+        }
+        if (!exists) {
+            return res.status(400).send({ response: "Este usuário não existe no servidor" })
+        }
+        const createDate = exists.date
+
+        exists.name = name
+        exists.email = email
+        exists.ativo = ativo
+        exists.tipo = tipo
+        exists.date = createDate
+
+        res.status(200).send({ response: `Dados do usuario ${name} está atualizado` }
+            
     })
 
 
