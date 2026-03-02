@@ -128,5 +128,5 @@ router
         res.status(200).send({ response: "Usuario deletado" })
 
     })
-
+    
 export default router
