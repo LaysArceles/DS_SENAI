@@ -40,7 +40,13 @@ node_modules/
 
 npm i express @types/express
 
-Material Icon Theme
+ tsconfig.json
+ "allowImportingTsExtensions": true,
+ "noEmit": true
+
+ package.json
+ "start": "node teste.js",
+"dev": "npx tsx watch src/server.ts"
 
 ---------------- Aula 06 -------------------
 comando para conectar ao Mango bd o banco 
