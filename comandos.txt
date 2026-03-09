@@ -126,5 +126,10 @@ const Person = mongoose.model<IPerson>('Person', personSchema);
 
 export default Person;
 -------------------------------------------------------------
+aula 09 frontend 
+ 
+npm create vite@lastest
+npm i axios
+npm i react-router-dom 
 
 
