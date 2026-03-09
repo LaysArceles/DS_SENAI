@@ -1,28 +1,40 @@
-import {Request, Response}from "express";
+import {Request, response, Response}from "express";
 import product from "../models/product.ts";
+import Product from "../models/product.ts";
+import mongoose from "mongoose";
 
 class ProductControllers{
-    static async postCreate(req:Request, res:Response){
+    static async Create(req:Request, res:Response){
         const {name,description, price,stock,category} = req.body
         const Product = new product( {name,description, price,stock,category});
         await Product.save();
-        return res.status(200).send({response:`Product ${name} cadastrado!`})
+        return res.status(200).send({response:`${name} cadastrado!`})
     }
-    static async getProdutc(req:Request, res:Response){ 
-        const {valor} = req.body
-        const {stock} =req.bory
-        const {category} = req.bory
-        const Product = await product.find().select("-__v");
-        const filtered = Product.filter((p) => p.category === category)
-        const filteredmaior = Product.filter((p) => p.price >= valor)
-        const filteredmenor = Product.filter((p) => p.category === category)
-        
-        if (filtered){
-            res.status(200).send({ response: { category }, product: filtered })
-        }
+    static async findAll (req:Request, res:Response){ 
+        const Product = await product.find();
         return res.status(200).send({response:Product})
+    }
 
+    static async findByid(req:Request,res:Response){
+        const {id} = req.params;
+        const exist = await Product.findById(id);
+        if (!exist){
+            return res.status(404).send({response:"Produto não encontrado"})
+        }
+        return res.status(200).send({response: exist})
 
     }
+    static async update (req:Request,res:Response){
+        const {name,description, price,stock,category} = req.body
+        const {id} = req.params
+        await Product.findByIdAndUpdate(id,{name,description,price,stock,category})
+        return res.status(200).send({response:"Produto Atualizado", Response:Product})
+    }
+    static async remove(req:Request, res:Response){
+        const{id}=req.params
+        await Product.findByIdAndDelete(id)
+        return res.status(200).send({response:"Produto Removido"})
+    }
+
 }
 export default ProductControllers
