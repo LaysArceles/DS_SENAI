@@ -20,10 +20,12 @@
   },
   "dependencies": {
     "@types/express": "^5.0.6",
+    "axios": "^1.13.6",
     "config": "^4.4.1",
     "cores": "^0.8.5",
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "mongoose": "^9.2.3"
+    "mongoose": "^9.2.3",
+    "react-router-dom": "^7.13.1"
   }
 }

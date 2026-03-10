@@ -27,11 +27,10 @@ class ProductControllers{
     static async update (req:Request,res:Response){
         const {name,description, price,stock,category} = req.body
         const {id} = req.params
-        try{
-            await Product.findByIdAndUpdate(id,{name,description,price,stock,category})
-            return res.status(200).send({response:"Produto Atualizado", Response:Product})
+        await Product.findByIdAndUpdate(id,{name,description,price,stock,category})
+        return res.status(200).send({response:"Produto Atualizado", Response:Product})
 
-        }
+        
     }
     static async remove(req:Request, res:Response){
         const{id}=req.params

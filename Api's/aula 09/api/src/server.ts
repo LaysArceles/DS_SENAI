@@ -12,8 +12,8 @@ app.get('/', (req,res)=>{
 app.use(cors({
     origin: '*'
 }))
-connectDB()
 
+connectDB()
 router(app)
 
 app.get('/',(req,res)=>{

@@ -6,5 +6,5 @@ import Product from './product.ts';
 export default function(app:Express){
     app
     .use(express.json())
-    .use('/dta',Product)
+    .use('/Api',Product)
 }

@@ -6,7 +6,7 @@ function App() {
   const [products, setProducts] = useState<any>([])
 
   const fetchData = async () => {
-    const data = await axios.get("localhost:8080/dta/access")
+    const data = await axios.get("localhost:8080/Api/access")
     setProducts(data)
   }
   useEffect(()=>{
