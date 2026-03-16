@@ -144,4 +144,31 @@ Na pasta backend:
             origin: '*'
         }))
 
+------------------------------- aula 10 --------------------------------
+Revisão 
 
+https
+post -> {body}
+get  -> {params}
+put  -> {body , params}
+del  -> {params}
+
+src
+  |- mid -> validação de req - next();
+  |- rouders -> caminhos da Api
+  |- config  -> regras do negocio
+  |- database -> conexão com bd
+  |- models -> estrutura dos dados
+  |- server.ts -> inicializa a Api
+
+CRUD
+c - Create
+R - Read
+U - Update
+D - Delete
+
+O que Vamos fazer 
+Auth - Autentificação
+services
+Prisma ->sql
+ws -> ReadTimer
