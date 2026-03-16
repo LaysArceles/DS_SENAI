@@ -172,3 +172,5 @@ Auth - Autentificação
 services
 Prisma ->sql
 ws -> ReadTimer
+
+npm i react-router-dom tailwindcss

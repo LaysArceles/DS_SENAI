@@ -1,31 +1,39 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
-import { BrowserRouter,Link,Routes,Route} from 'react-router-dom'
+
+interface product {
+  _id: string
+  name: string
+  price: number
+}
+
 
 function App() {
-  const [products, setProducts] = useState<any>([])
+  const [products, setProducts] = useState<product[]>([])
 
   const fetchData = async () => {
-    const data = await axios.get("localhost:8080/Api/access")
-    setProducts(data)
+    const res = await axios.get("http://localhost:8080/Api/access")
+    setProducts(res.data.response)
   }
   useEffect(()=>{
-    fetchData();
+    fetchData(); // chama a pagna assim que chamada
   },[])
 
   return (
     <>
-      <BrowserRouter>
-      <nav>
-        <Link to ="/"> Home </Link>
-        <Link to = "/access"> Products </Link>
-      </nav>
-      <Routes>
-        <Route path = "/" element = {<botoes/>}/>
-        <Route path = "/access" element = {<listproduct/>}/>
-      </Routes>
-      </BrowserRouter>
+    {
+      products.map((product) => {
+        return (
+        <div key={product._id}>
+            <span>{product.name}</span> 
+            <br />
+            <span>{product.price}</span>
+        </div>
+
+        )})
+    }
+      
     </>
   )
 }
