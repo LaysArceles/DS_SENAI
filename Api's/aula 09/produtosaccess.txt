@@ -1,0 +1,147 @@
+{
+  "name": "Cappuccino Italiano",
+  "description": "Café espresso com leite vaporizado e espuma cremosa.",
+  "price": 9.50,
+  "stock": 40,
+  "category": "Cafés",
+  "image":"https://cheirinbao.com.br/storage/2024/05/cappuccino-italiano-1024x576.webp"
+}
+{
+  "name": "Latte Baunilha",
+  "description": "Café com leite e toque suave de baunilha.",
+  "price": 11.00,
+  "stock": 35,
+  "category": "Cafés",
+  "image":"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/vanilla_latte.jpg"
+}
+{
+  "name": "Mocha Chocolate Belga",
+  "description": "Café com leite, chocolate belga e chantilly.",
+  "price": 13.50,
+  "stock": 30,
+  "category": "Cafés",
+  "image": "https://scontent.fbfh2-1.fna.fbcdn.net/v/t1.6435-9/190571295_2891279254523980_6290355136988286162_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=06a7ca&_nc_ohc=iXDGKJbMMb0Q7kNvwHK19vr&_nc_oc=AdlOtYjRY8Mv9BD64mLZrRW2isVuCY2B8ludf8ecQKGkrA6tRN73dSdWG3zqlg_6CNw&_nc_zt=23&_nc_ht=scontent.fbfh2-1.fna&_nc_gid=C5RkVTAicjOkU6jjIGu7Ow&_nc_ss=8&oh=00_AfwSfTcBEUAxFwDGj4L1Do7r-stce8KSZZNLWcfjsNns9A&oe=69E0BA3C"
+}
+{
+  "name": "Espresso Duplo",
+  "description": "Dose dupla de café espresso intenso.",
+  "price": 7.00,
+  "stock": 50,
+  "category": "Cafés"
+}
+{
+  "name": "Chá Gelado de Pêssego",
+  "description": "Drink refrescante de chá preto com pêssego.",
+  "price": 8.50,
+  "stock": 45,
+  "category": "Drinks"
+}
+{
+  "name": "Limonada Siciliana",
+  "description": "Bebida artesanal com limão siciliano e hortelã.",
+  "price": 10.00,
+  "stock": 40,
+  "category": "Drinks"
+}
+{
+  "name": "Smoothie de Frutas Vermelhas",
+  "description": "Mix de frutas vermelhas batidas com iogurte.",
+  "price": 14.00,
+  "stock": 25,
+  "category": "Drinks",
+  "image": "https://nutriumstorageaccount.blob.core.windows.net/rails-active-storage/ketwvikouq2s142epd3u072r53qj?sp=r&sv=2018-11-09&se=2026-04-17T13%3A46%3A42Z&rscd=inline%3B+filename%3D%22smoothie.jpg%22%3B+filename*%3DUTF-8%27%27smoothie.jpg&rsct=image%2Fjpeg&sr=b&sig=oi6kevWAPOraXPMRnTLfsEWbcL39g9mqMY434RwL7aU%3D"
+}
+{
+  "name": "Croissant de Amêndoas",
+  "description": "Croissant folhado recheado com creme de amêndoas.",
+  "price": 12.50,
+  "stock": 20,
+  "category": "Salgados",
+  "image": "https://encomende.emporiojardimrio.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/r/croissant_amendoas.jpg"
+}
+{
+  "name": "Quiche de Alho Poró",
+  "description": "Torta salgada com recheio cremoso de alho poró.",
+  "price": 15.00,
+  "stock": 18,
+  "category": "Salgados"
+}
+{
+  "name": "Sanduíche Caprese",
+  "description": "Pão artesanal com tomate, mussarela e manjericão.",
+  "price": 16.50,
+  "stock": 22,
+  "category": "Salgados"
+}
+{
+  "name": "Empada de Frango Gourmet",
+  "description": "Empada cremosa de frango com massa amanteigada.",
+  "price": 8.00,
+  "stock": 30,
+  "category": "Salgados"
+}
+{
+  "name": "Torta de Limão Siciliano",
+  "description": "Sobremesa com base crocante e creme cítrico.",
+  "price": 14.50,
+  "stock": 15,
+  "category": "Doces"
+}
+{
+  "name": "Cheesecake de Frutas Vermelhas",
+  "description": "Cheesecake cremoso com calda de frutas vermelhas.",
+  "price": 17.00,
+  "stock": 12,
+  "category": "Doces"
+}
+{
+  "name": "Éclair de Chocolate",
+  "description": "Doce francês recheado com creme e cobertura de chocolate.",
+  "price": 11.50,
+  "stock": 20,
+  "category": "Doces"
+}
+{
+  "name": "Macaron de Pistache",
+  "description": "Doce delicado francês com recheio de pistache.",
+  "price": 9.00,
+  "stock": 25,
+  "category": "Doces"
+}
+{
+  "name": "Brownie Premium",
+  "description": "Brownie denso com chocolate meio amargo.",
+  "price": 10.50,
+  "stock": 28,
+  "category": "Doces"
+}
+{
+  "name": "Frapê de Café Caramelo",
+  "description": "Bebida gelada de café com caramelo e chantilly.",
+  "price": 15.50,
+  "stock": 20,
+  "category": "Drinks"
+}
+{
+  "name": "Chocolate Quente Cremoso",
+  "description": "Bebida quente com chocolate intenso e textura cremosa.",
+  "price": 12.00,
+  "stock": 35,
+  "category": "Drinks"
+}
+{
+  "name": "Panini de Presunto Parma",
+  "description": "Sanduíche prensado com presunto parma e queijo.",
+  "price": 18.00,
+  "stock": 15,
+  "category": "Salgados",
+  "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzk3X3-HWyC3FUA3tMasBXxRjdovlc9HMiiA&s"
+}
+{
+  "name": "Bruschetta Italiana",
+  "description": "Pão tostado com tomate, azeite e ervas frescas.",
+  "price": 13.00,
+  "stock": 18,
+  "category": "Salgados",
+  "image": "https://debemcomacomida.com.br/wp-content/uploads/2020/09/italian-bruschettas-7433A4M-1024x665.jpg"
+}

@@ -5,8 +5,8 @@ import mongoose from "mongoose";
 
 class ProductControllers{
     static async Create(req:Request, res:Response){
-        const {name,description, price,stock,category} = req.body
-        const Product = new product( {name,description, price,stock,category});
+        const {name,description, price,stock,category,image} = req.body
+        const Product = new product( {name,description, price,stock,category,image});
         await Product.save();
         return res.status(200).send({response:`${name} cadastrado!`})
     }
