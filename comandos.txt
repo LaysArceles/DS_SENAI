@@ -174,3 +174,6 @@ Prisma ->sql
 ws -> ReadTimer
 
 npm i react-router-dom tailwindcss
+
+------------------------------10---------------------------------
+na api rodar npm i dotenv crypto-js jsonwebtoken

@@ -10,14 +10,14 @@ function App() {
   return (
     <>
       <nav>
-        <div className='flex justify-center items-center w-full h-20 bg-black text-amber-50'>
+        <div className='flex justify-center items-center w-full h-20 bg-blue-600 text-amber-50'>
           <h1>
             Home
           </h1>
 
         </div>
       </nav>
-      <div className='h-screen bg-linear-to-t from-emerald-900 to-green-900'>
+      <div className='h-screen bg-linear-to-t from-blue-200 to-blue-400'>
         <div className='h-full '>
         <div className='flex justify-center '>
           <div> <Carrossel/></div>
