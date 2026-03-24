@@ -37,21 +37,24 @@ function Carrossel() {
   return (
     <div className="text-center font-[cursive] text-[30px] text-white">
 
+          <span>Menu</span>
+          <br />
       <div className="flex justify-center items-center gap-4">
 
         <button onClick={anterior} className="bg-gray-800 px-3 py-2 rounded">
           ⬅
         </button>
 
-        <img src={p1.image} className="w-48 h-32 object-cover rounded-lg" />
+        <img src={p1.image} className="w-58 h-45 object-cover rounded-lg" />
 
-        <img src={p2.image} className="w-48 h-32 object-cover rounded-lg" />
+        <img src={p2.image} className="w-58 h-45 object-cover rounded-lg" />
 
-        <img src={p3.image} className="w-48 h-32 object-cover rounded-lg" />
+        <img src={p3.image} className="w-58 h-45 object-cover rounded-lg" />
 
         <button onClick={proximo} className="bg-gray-800 px-3 py-2 rounded">
           ➡
         </button>
+        
 
       </div>
     </div>

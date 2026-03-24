@@ -1,44 +1,89 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-interface user{
-    _id:string
-    email:string
-    password:string
+import { Link, useNavigate } from "react-router-dom"; // 1. Importe o useNavigate
+import { useState } from "react";
 
-}
+const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
+    // 2. Inicialize o hook
+    const navigate = useNavigate();
 
- const Login = () => {
-    const [login, setLogin] = useState<user[]>([])
+    const handleLogin = async () => {
+        try {
+            const res = await axios.post("http://localhost:8080/api/auth/login", {
+                email: email,
+                password: password
+            });
+            
+            console.log("Login realizado com sucesso:", res.data);
+            
+            // Opcional: Salvar o token no localStorage se o seu backend retornar um
+            // localStorage.setItem("token", res.data.token);
 
-    const fetchData = async() => {
-        const res = await axios.post("localhost:8080/api/auth/login")
-        setLogin(res.data.response.email)
+            alert("Bem-vindo!");
+
+            // 3. Manda o usuário para a Home
+            navigate("/Home"); 
+
+        } catch (error) {
+            console.error("Erro ao fazer login:", error);
+            alert("Falha no login. Verifique seus dados.");
+        }
     }
-    useEffect(()=>{
-        fetchData();
-    },[])
 
     return (
         <>
-        {
-            login.map((user)=>{
-                return (
-                    <div key={user._id}>
-                        <span>Email: </span>
-                        <input type="text" />
-                        <span>Password: </span>
-                        <input type="text"/>
-                        <button> at sende</button>
-
+            <nav>
+                <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-20">
+                    <span className="font-bold">
+                        <Link to="/Home">
+                            <button className="hover:text-blue-200 transition">Home</button>
+                        </Link>
+                    </span>
+                    <div className="space-x-10">
+                        <Link to="/login"><button>Login</button></Link>
+                        <Link to="/register"><button>Register</button></Link>
                     </div>
-                )
-            })
-        }
+                </div>
+            </nav>
 
+            <main className="h-screen bg-gradient-to-t from-blue-200 to-blue-400 flex justify-center pt-20">
+                <div className="bg-white p-8 rounded-lg shadow-lg h-fit w-full max-w-md">
+                    <h2 className="text-2xl font-bold mb-6 text-blue-600 text-center">Entrar</h2>
+                    
+                    <div className="flex flex-col space-y-4">
+                        <div>
+                            <label className="block mb-1">Email:</label>
+                            <input 
+                                type="email" 
+                                className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-400 outline-none"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} 
+                            />
+                        </div>
 
+                        <div>
+                            <label className="block mb-1">Password:</label>
+                            <input 
+                                type="password" 
+                                className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-400 outline-none"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+
+                        <button 
+                            onClick={handleLogin}
+                            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition font-bold"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </main>
         </>
-    )
-
-
+    );
 }
+
 export default Login;

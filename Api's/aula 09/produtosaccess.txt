@@ -27,21 +27,24 @@
   "description": "Dose dupla de café espresso intenso.",
   "price": 7.00,
   "stock": 50,
-  "category": "Cafés"
+  "category": "Cafés",
+  "image": "https://zagodoni.com.br/wp-content/uploads/2022/08/IMG-20220816-WA0007.jpg"
 }
 {
   "name": "Chá Gelado de Pêssego",
   "description": "Drink refrescante de chá preto com pêssego.",
   "price": 8.50,
   "stock": 45,
-  "category": "Drinks"
+  "category": "Drinks",
+  "image": "https://static.vecteezy.com/ti/fotos-gratis/p1/16231723-cha-gelado-de-pessego-e-limao-foto.jpg"
 }
 {
   "name": "Limonada Siciliana",
   "description": "Bebida artesanal com limão siciliano e hortelã.",
   "price": 10.00,
   "stock": 40,
-  "category": "Drinks"
+  "category": "Drinks",
+  "image":"https://images.metroimg.com/2024/02/09120657/dois-copos-com-limonada-com-leite-condensado.jpg"
 }
 {
   "name": "Smoothie de Frutas Vermelhas",
@@ -64,35 +67,40 @@
   "description": "Torta salgada com recheio cremoso de alho poró.",
   "price": 15.00,
   "stock": 18,
-  "category": "Salgados"
+  "category": "Salgados",
+  "image": "https://s2-receitas.glbimg.com/fla0Lzrm40Z7nQa-NKbiZxvV9So=/0x0:1366x768/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2024/4/U/AjEOVBRdeS3INtcqCX1w/quiche-de-alho-poro.jpg"
 }
 {
   "name": "Sanduíche Caprese",
   "description": "Pão artesanal com tomate, mussarela e manjericão.",
   "price": 16.50,
   "stock": 22,
-  "category": "Salgados"
+  "category": "Salgados",
+  "image": "https://areademulher.r7.com/wp-content/uploads/2022/08/receita-de-sanduiche-caprese.jpg"
 }
 {
   "name": "Empada de Frango Gourmet",
   "description": "Empada cremosa de frango com massa amanteigada.",
   "price": 8.00,
   "stock": 30,
-  "category": "Salgados"
+  "category": "Salgados",
+  "image":"https://www.belini-gastronomia.com.br/web/image/product.template/226/image_1024?unique=80a7573"
 }
 {
   "name": "Torta de Limão Siciliano",
   "description": "Sobremesa com base crocante e creme cítrico.",
   "price": 14.50,
   "stock": 15,
-  "category": "Doces"
+  "category": "Doces",
+  "image": "https://recipesblob.oetker.com.br/assets/d044a4ef3cfe45998593f500c00942ef/1272x764/torta-de-limo.jpg",
 }
 {
   "name": "Cheesecake de Frutas Vermelhas",
   "description": "Cheesecake cremoso com calda de frutas vermelhas.",
   "price": 17.00,
   "stock": 12,
-  "category": "Doces"
+  "category": "Doces",
+  "image":"https://s2-receitas.glbimg.com/54KiQVGas8DCIiwYqclaakNc1O4=/0x0:1366x768/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2025/3/r/h8urvgQPO8vv1nWSPy3A/cheesecake-de-frutas-vermelhas.jpg"
 }
 {
   "name": "Éclair de Chocolate",
@@ -106,28 +114,32 @@
   "description": "Doce delicado francês com recheio de pistache.",
   "price": 9.00,
   "stock": 25,
-  "category": "Doces"
+  "category": "Doces",
+  "image":"https://anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-1847-48ae69c9ed51f606524b4dc69630bead.jpg"
 }
 {
   "name": "Brownie Premium",
   "description": "Brownie denso com chocolate meio amargo.",
   "price": 10.50,
   "stock": 28,
-  "category": "Doces"
+  "category": "Doces",
+  "image": "https://mavalerio.com.br/wp-content/uploads/2018/12/180517-048.jpg"
 }
 {
   "name": "Frapê de Café Caramelo",
   "description": "Bebida gelada de café com caramelo e chantilly.",
   "price": 15.50,
   "stock": 20,
-  "category": "Drinks"
+  "category": "Drinks",
+  "image":"https://thumbs.dreamstime.com/b/batimento-caramelo-com-caf%C3%A9-em-mesa-de-madeira-sorvete-salgado-frappucccino-frappuccino-frio-gelado-frappe-creme-chicoteado-178726831.jpg"
 }
 {
   "name": "Chocolate Quente Cremoso",
   "description": "Bebida quente com chocolate intenso e textura cremosa.",
   "price": 12.00,
   "stock": 35,
-  "category": "Drinks"
+  "category": "Drinks",
+  "image":"https://monologosdoarroz.com.br/wp-content/uploads/2025/05/chocolate-quente-cremoso-blog-monologos-do-arroz.webp"
 }
 {
   "name": "Panini de Presunto Parma",
