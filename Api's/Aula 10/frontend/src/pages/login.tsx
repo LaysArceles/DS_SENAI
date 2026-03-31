@@ -36,7 +36,7 @@ const Login = () => {
             <nav>
                 <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-20">
                     <span className="font-bold">
-                        <Link to="/Home">
+                        <Link to="/">
                             <button className="hover:text-blue-200 transition">Home</button>
                         </Link>
                     </span>

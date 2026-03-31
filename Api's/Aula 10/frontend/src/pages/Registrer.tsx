@@ -4,33 +4,31 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const Register = () => {
-    // 1. Estados separados para cada campo
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    // 2. Função de Registro
     const handleRegister = async () => {
         try {
             // const res = await axios.post("http://localhost:8080/api/auth/register", {
-            await axios.post("http://localhost:8080/api/auth/register", {name,email,password});
-            Swal.fire({ 
-                title:"Success!",
-                text: "Usuário registrado com sucesso",
+            await axios.post("http://localhost:8080/api/auth/register", { name, email, password });
+            Swal.fire({
+                title: "Success!",
+                text: "Registered user with success",
                 icon: "success"
             })
             // console.log("Registro realizado com sucesso:", res.data);
             // alert("Conta criada com sucesso!");
-        // } catch (error) {
-        } catch{
+            // } catch (error) {
+        } catch {
             // console.error("Erro ao fazer register:", error);
             // alert("Falha no registro. Verifique os dados ou se o e-mail já existe.");
             Swal.fire({
-                title:"Erro!",
-                text: "Não foi possível registrar o usuário",
+                title: "Erro!",
+                text: "We were unable to register the user.",
                 icon: "error"
             })
-        } 
+        }
         setName("")
         setEmail("")
         setPassword("")
@@ -43,7 +41,7 @@ const Register = () => {
                 <nav>
                     <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-20">
                         <span className="font-bold">
-                            <Link to="/Home">
+                            <Link to="/">
                                 <button className="hover:text-blue-200 transition">Home</button>
                             </Link>
                         </span>
@@ -85,7 +83,8 @@ const Register = () => {
                                 onClick={handleRegister}
                                 className="bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition mt-4"
                             >
-                                Criar Conta
+
+                                Create Account
                             </button>
                         </div>
                     </div>

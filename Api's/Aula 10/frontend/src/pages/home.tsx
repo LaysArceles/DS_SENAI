@@ -7,7 +7,7 @@ const Home = () => {
       <nav>
         <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-20">
           <span className="font-bold">
-            <Link to="/Home">
+            <Link to="/">
               <button className="hover:text-blue-200 transition">Home</button>
             </Link>
           </span>
@@ -27,6 +27,13 @@ const Home = () => {
         <div className="flex justify-center pt-10">
           <div className="w-full max-w-4xl"> 
              <Carrossel />
+             <div className="flex">
+
+               <Link to="/register_Product"> <button  className="bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition mt-4">
+                Create Product
+                </button></Link>
+
+             </div>
           </div>
         </div>
       </main>
