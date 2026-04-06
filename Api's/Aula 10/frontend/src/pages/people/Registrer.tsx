@@ -42,7 +42,7 @@ const Register = () => {
                     <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-20">
                         <span className="font-bold">
                             <Link to="/">
-                                <button className="hover:text-blue-200 transition">Home</button>
+                                <button className="text-3xl hover:text-blue-200 transition">Home</button>
                             </Link>
                         </span>
                         <div className="space-x-10">

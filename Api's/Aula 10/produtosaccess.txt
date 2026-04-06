@@ -107,7 +107,8 @@
   "description": "Doce francês recheado com creme e cobertura de chocolate.",
   "price": 11.50,
   "stock": 20,
-  "category": "Doces"
+  "category": "Doces",
+  "image":"https://www.estadao.com.br/resizer/v2/WYEOGMSWGFAUBC67P5VYS2UX24.jpg?auth=3034f0a08c40512d0ebc4c038942069d5f44eea79a6e317fde3c1f9a407fa886"
 }
 {
   "name": "Macaron de Pistache",
@@ -135,7 +136,7 @@
 }
 {
   "name": "Chocolate Quente Cremoso",
-  "description": "Bebida quente com chocolate intenso e textura cremosa.",
+  "description": ".Bebida quente com chocolate intenso e textura cremosa",
   "price": 12.00,
   "stock": 35,
   "category": "Drinks",

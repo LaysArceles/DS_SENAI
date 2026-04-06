@@ -37,7 +37,7 @@ const Login = () => {
                 <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-20">
                     <span className="font-bold">
                         <Link to="/">
-                            <button className="hover:text-blue-200 transition">Home</button>
+                            <button className="text-3xl hover:text-blue-200 transition">Home</button>
                         </Link>
                     </span>
                     <div className="space-x-10">
@@ -53,22 +53,22 @@ const Login = () => {
 
                     <div className="flex flex-col space-y-4">
                         <div>
-                            <label className="block mb-1">Email:</label>
                             <input
                                 type="email"
                                 className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-400 outline-none"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
+                                placeholder = "Email:"
                             />
                         </div>
 
                         <div>
-                            <label className="block mb-1">Password:</label>
                             <input
                                 type="password"
                                 className="w-full border p-2 rounded focus:ring-2 focus:ring-blue-400 outline-none"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                placeholder = "Password: "
                             />
                         </div>
                         <button

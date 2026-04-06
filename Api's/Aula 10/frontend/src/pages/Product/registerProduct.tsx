@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 const RegProduct = () => {
     const [name, setName] = useState("");
     const [description, setDes] = useState("");
-    const [price, setPrice] = useState<number>(0);
-    const [stock, setStock] = useState<number>(0);
+    const [price, setPrice] = useState<number>();
+    const [stock, setStock] = useState<number>();
     const [category, SetCat] = useState("");
     const [image, setImage] = useState("");
 
@@ -35,16 +35,18 @@ const RegProduct = () => {
             setImage(""),
             SetCat("");
     }
+    useEffect(()=>{
+        console.log(price,stock)
+    },[price,stock])
 
     return (
         <>
             <div className="h-screen w- screen">
                 <nav>
-                    <div className="flex justify-between item-center w-full h-20 bg-blue-600 text-amber-50 px-20">
+                    <div className="flex justify-between items-center w-full h-20 bg-blue-600 text-amber-50 px-10">
                         <span>
-                            <Link to="/">
-                                <button className="Hover:text-blue-200 transition">Home</button>
-
+                            <Link to="/create">
+                                <button className="text-3xl font-bold">Produtos</button>
                             </Link>
                         </span>
                     </div>
@@ -63,7 +65,7 @@ const RegProduct = () => {
                                         className="w-full border p-2 rounded focus:outline-blue-400" />
                                 </div>
                                 <div>
-                                    <input type="number" value={price} onChange={(p) => setPrice(Number(p.target.value))} placeholder="Product price"
+                                    <input type="number"  onChange={(p) => setPrice(Number(p.target.value))} placeholder="Product price"
                                         className="w-full border p-2 rounded focus:outline-blue-400" />
                                 </div>
                                 <div>
